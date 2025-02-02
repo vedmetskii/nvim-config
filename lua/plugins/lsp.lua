@@ -21,7 +21,16 @@ return {
 				['rust-analyzer'] = {},
 			},
 		})
+		lspconfig.emmet_ls.setup({})
+		lspconfig.gitlab_ci_ls.setup({})
+		lspconfig.dockerls.setup({})
+		lspconfig.docker_compose_language_service.setup({})
 		lspconfig.pyright.setup({})
+		lspconfig.clangd.setup{}
+		lspconfig.yamlls.setup({
+			settings = {}
+		})
+		lspconfig.ts_ls.setup({})
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
