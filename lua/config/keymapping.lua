@@ -12,3 +12,5 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
 vim.keymap.set("n", "|", ":vsplit<CR>")
 vim.keymap.set("n", "\\", ":split<CR>")
+
+vim.keymap.set("n", "<leader>L", ":Lazy<CR>")

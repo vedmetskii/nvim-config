@@ -31,6 +31,7 @@ return {
 		})
 
 		vim.keymap.set({ 'n', 'v' }, '<leader>mc', ':Gen Change_Code<CR>')
+		vim.keymap.set({'n', 'v' }, '<leader>ma', ':Gen Ask<CR>')
 	end
 }
 
