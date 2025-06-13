@@ -3,7 +3,7 @@ return {
 	config = function()
 		local gen = require('gen')
 		gen.setup({
-			model = "deepseek-r1", -- The default model to use.
+			model = "codellama:7b", -- The default model to use.
 			quit_map = "q", -- set keymap to close the response window
 			retry_map = "<c-r>", -- set keymap to re-send the current prompt
 			accept_map = "<c-cr>", -- set keymap to replace the previous selection with the last result
@@ -12,7 +12,7 @@ return {
 			display_mode = "float", -- The display mode. Can be "float" or "split" or "horizontal-split".
 			show_prompt = false, -- Shows the prompt submitted to Ollama. Can be true (3 lines) or "full".
 			show_model = true, -- Displays which model you are using at the beginning of your chat session.
-			no_auto_close = false, -- Never closes the window automatically.
+			no_auto_close = true, -- Never closes the window automatically.
 			file = false, -- Write the payload to a temporary file to keep the command short.
 			hidden = false, -- Hide the generation window (if true, will implicitly set `prompt.replace = true`), requires Neovim >= 0.10
 			init = function(options) pcall(io.popen, "ollama serve > /dev/null 2>&1 &") end,
@@ -32,6 +32,8 @@ return {
 
 		vim.keymap.set({ 'n', 'v' }, '<leader>mc', ':Gen Change_Code<CR>')
 		vim.keymap.set({'n', 'v' }, '<leader>ma', ':Gen Ask<CR>')
+		vim.keymap.set({'n', 'v' }, '<leader>mr', ':Gen Review_Code<CR>')
+		vim.keymap.set({'n', 'v' }, '<leader>mr', ':Gen Enchange_Code<CR>')
 	end
 }
 
